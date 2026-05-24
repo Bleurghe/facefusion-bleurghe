@@ -14,8 +14,8 @@ echo
 
 # ── 1. System packages ────────────────────────────────────────────────────────
 echo "[1/8] Installing system packages..."
-sudo apt update --yes -qq
-sudo apt install -y git git-lfs curl ffmpeg
+apt update --yes -qq
+apt install -y git git-lfs curl ffmpeg
 git lfs install --skip-repo
 
 # ── 2. Miniconda ──────────────────────────────────────────────────────────────
