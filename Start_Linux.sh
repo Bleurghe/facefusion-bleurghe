@@ -11,7 +11,6 @@ export PYTHONWARNINGS="ignore"
 export CUDA_VISIBLE_DEVICES=0
 
 cd "$FACEFUSION_DIR"
-python facefusion.py run \
+GRADIO_SHARE=true python facefusion.py run \
     --execution-providers cuda \
-    --ui-layouts webcam \
-    --share
+    --ui-layouts webcam
