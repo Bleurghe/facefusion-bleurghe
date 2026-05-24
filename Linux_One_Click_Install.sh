@@ -4,6 +4,9 @@
 set -e
 trap 'echo; echo "ERROR: installation failed at line $LINENO — check output above."; exit 1' ERR
 
+# Make scripts executable in case git cloned them without execute permission
+chmod +x "$(dirname "${BASH_SOURCE[0]}")"/*.sh 2>/dev/null || true
+
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 FACEFUSION_DIR="$SCRIPT_DIR/facefusion"
 
@@ -94,5 +97,5 @@ echo "========================================"
 echo "  Installation complete!"
 echo "========================================"
 echo
-echo "To start FaceFusion run:  ./Start_Linux.sh"
+echo "To start FaceFusion run:  bash Start_Linux.sh"
 echo
